@@ -50,17 +50,20 @@ public class ConnectionGet {
 			Mapper mapper = new Mapper();
 			FinalOutputBean finalOutputBean = mapper
 					.getPojoFromJsonString(fullOutput);
-			
-			BufferedReader bufferReader = new BufferedReader(new InputStreamReader(System.in));
+
+			BufferedReader bufferReader = new BufferedReader(
+					new InputStreamReader(System.in));
 			System.out.println("Please enter price:");
-			String inputPrice= bufferReader.readLine();
-			if(inputPrice.contains(DOLLAR_SYMBOL)){
+			String inputPrice = bufferReader.readLine();
+			if (inputPrice.contains(DOLLAR_SYMBOL)) {
 				inputPrice.replace(DOLLAR_SYMBOL, "");
 			}
 			System.out.println("Please enter # of products (Only Numbers): ");
-			int productsCount= bufferReader.read();
-			
-			System.out.println("Your preferred price limit and count of products:" +inputPrice +"/n" +productsCount);
+			int productsCount = bufferReader.read();
+
+			System.out
+					.println("Your preferred price limit and count of products:"
+							+ inputPrice + "/n" + productsCount);
 			float price = Float.parseFloat(inputPrice);
 			List<Results> listOutput = mapper
 					.parseValuesToCalculateGiftsCombination(productsCount,

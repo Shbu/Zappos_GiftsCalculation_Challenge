@@ -9,8 +9,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 public class Mapper {
 
 	ObjectMapper mapper = new ObjectMapper();
-	private int price;
-	private int productCount;
 	private CalculateGiftsCombination calculateGiftsCombination = null;
 
 	public FinalOutputBean getPojoFromJsonString(String outputInJsonFormat) {
@@ -30,11 +28,12 @@ public class Mapper {
 		return finalResultsInJsonFormat;
 	}
 
-	public List<Results> parseValuesToCalculateGiftsCombination(int productsCount,
-			Float price, FinalOutputBean finalOutputBean) {
+	public List<Results> parseValuesToCalculateGiftsCombination(
+			int productsCount, Float price, FinalOutputBean finalOutputBean) {
 		calculateGiftsCombination = new CalculateGiftsCombination(
 				finalOutputBean);
-		List<Results> outputProductsList =calculateGiftsCombination.removeProductsGreaterThanGivenPrice(productsCount, price);
+		List<Results> outputProductsList = calculateGiftsCombination
+				.removeProductsGreaterThanGivenPrice(productsCount, price);
 		return outputProductsList;
 	}
 

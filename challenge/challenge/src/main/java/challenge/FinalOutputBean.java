@@ -17,7 +17,6 @@ public class FinalOutputBean implements Serializable {
 	private int totalResultCount;
 
 	public FinalOutputBean() {
-
 	}
 
 	public List<Results> getResults() {
