@@ -1,4 +1,4 @@
-package challenge;
+package src.main.java.challenge;
 
 import java.util.ArrayList;
 import java.util.Iterator;

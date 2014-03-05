@@ -1,4 +1,4 @@
-package challenge;
+package src.main.java.challenge;
 
 import java.io.IOException;
 import java.util.List;

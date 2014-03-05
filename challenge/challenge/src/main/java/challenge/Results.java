@@ -1,5 +1,4 @@
-package challenge;
-
+package src.main.java.challenge;
 import java.io.Serializable;
 
 public class Results implements Serializable {
