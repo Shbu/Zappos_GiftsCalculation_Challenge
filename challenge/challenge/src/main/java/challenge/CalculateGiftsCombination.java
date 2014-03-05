@@ -6,7 +6,6 @@ import java.util.List;
 
 public class CalculateGiftsCombination {
 
-	private static final int TOTAL_PRODUCTS_REQUIRED = 5;
 	private FinalOutputBean finalOutputBean = null;
 
 	List<Object> finalListOfProducts = new ArrayList<Object>();
@@ -21,7 +20,7 @@ public class CalculateGiftsCombination {
 			float price) {
 
 		List<Results> resultsList = finalOutputBean.getResults();
-		System.out.println("Total results" + resultsList.size());
+		//System.out.println("Total results" + resultsList.size());
 
 		Iterator<Results> resultsIterator = resultsList.iterator();
 		List<String> priceList = null;
@@ -30,40 +29,40 @@ public class CalculateGiftsCombination {
 		while (resultsIterator.hasNext()) {
 			Results results = resultsIterator.next();
 			if (Float.parseFloat(results.getPrice().substring(1)) < price) {
-				System.out.println("ProductName" + results.getProductName()
-						+ "| Price" + results.getPrice());
+				/*System.out.println("ProductName" + results.getProductName()
+						+ "| Price" + results.getPrice());*/
 				priceList = new ArrayList<String>();
 				productName = new ArrayList<String>();
 				priceList.add(results.getPrice());
 				productName.add(results.getProductName());
 			} else {
 				resultsIterator.remove();
-				System.out.println("Product" + count + "Missed");
+				//System.out.println("Product" + count + "Missed");
 			}
 			count++;
 		}
-		System.out.println("Total Results after calculation: "
-				+ resultsList.size());
+		/*System.out.println("Total Results after calculation: "
+				+ resultsList.size());*/
 		Iterator<Results> resultsIteratorOutput = resultsList.iterator();
 
-		while (resultsIteratorOutput.hasNext()) {
+		/*while (resultsIteratorOutput.hasNext()) {
 			System.out.println("Final products");
 			System.out.println(resultsIteratorOutput.next().getProductName());
-		}
+		}*/
 
 		ArrayList<BridgeBean> arr = new ArrayList<BridgeBean>(
-				TOTAL_PRODUCTS_REQUIRED);
-		for (int i = 0; i < TOTAL_PRODUCTS_REQUIRED; i++) {
+				productsCount);
+		for (int i = 0; i < productsCount; i++) {
 			arr.add(i, new BridgeBean());
 		}
-		loop(resultsList, TOTAL_PRODUCTS_REQUIRED, 0, arr, price);
+		loop(resultsList, productsCount, 0, arr, price);
 		return resultsList;
 
 	}
 
 	private void loop(List<Results> resultsListnew, int len, int startpoint,
 			List<BridgeBean> resultsOutput, float price) {
-		System.out.println("--Products Combination for the given budget--");
+		//System.out.println("--Products Combination for the given budget--");
 		if (len == 0) {
 			// List<BridgeBean> newFinalBridgeBean = new
 			// ArrayList<BridgeBean>();
@@ -81,7 +80,7 @@ public class CalculateGiftsCombination {
 			}
 
 			if (totalPriceOfProducts < price) {
-				System.out.println("Combination No: " + productCount);
+				//System.out.println("Combination No: " + productCount);
 				System.out.println(productNames);
 				System.out.println("Total price for above products: "
 						+ totalPriceOfProducts + "\n"

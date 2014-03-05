@@ -59,11 +59,11 @@ public class ConnectionGet {
 				inputPrice.replace(DOLLAR_SYMBOL, "");
 			}
 			System.out.println("Please enter # of products (Only Numbers): ");
-			int productsCount = bufferReader.read();
+			int productsCount = Integer.parseInt(bufferReader.readLine());
 
 			System.out
 					.println("Your preferred price limit and count of products:"
-							+ inputPrice + "/n" + productsCount);
+							+ inputPrice + "\n" + productsCount);
 			float price = Float.parseFloat(inputPrice);
 			List<Results> listOutput = mapper
 					.parseValuesToCalculateGiftsCombination(productsCount,
